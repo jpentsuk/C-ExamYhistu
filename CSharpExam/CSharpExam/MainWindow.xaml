@@ -1,0 +1,63 @@
+﻿<Window x:Class="CSharpExam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSharpExam"
+        mc:Ignorable="d"
+        Title="Ühistuhaldur" Height="350" Width="925" Closing="Window_Closing">
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:3" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <TabControl>
+            <TabItem Header="Halda">
+                <Grid>
+                    <TextBox Name="txb_yhistunimi" HorizontalAlignment="Left" Height="23" Margin="97,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Karikakar"/>
+                    <TextBox Name="txb_aadress" HorizontalAlignment="Left" Height="23" Margin="97,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Nisu 4, Tartu"/>
+                    <TextBox Name="txb_registrikood" HorizontalAlignment="Left" Height="23" Margin="97,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="3456765433"/>
+                    <Label Content="Ühistu nimi" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Aadress" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Registrikood" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top"/>
+                    <ListBox Name="lsb_yhistud" HorizontalAlignment="Left" Height="100" Margin="372,20,0,0" VerticalAlignment="Top" Width="518" SelectionChanged="lsb_yhistud_SelectionChanged"/>
+                    <Button Name="btn_lisayhistu" Content="Lisa ühistu" HorizontalAlignment="Left" Margin="235,24,0,0" VerticalAlignment="Top" Width="95" Click="btn_lisayhistu_Click"/>
+                    <Button Name="btn_eemaldayhistu" Content="Eemalda ühistu" HorizontalAlignment="Left" Margin="235,64,0,0" VerticalAlignment="Top" Width="95" Click="btn_eemaldayhistu_Click"/>
+                    <ListBox Name="lsb_korterid" HorizontalAlignment="Left" Height="100" Margin="423,163,0,0" VerticalAlignment="Top" Width="467"/>
+                    <TextBox Name="txb_korteritunnus" HorizontalAlignment="Left" Height="27" Margin="294,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Rõduga"/>
+                    <TextBox Name="txb_vastutavisik" HorizontalAlignment="Left" Height="29" Margin="294,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Jan Pentshuk"/>
+                    <Button Name="btn_lisakorter" Content="Lisa korter" HorizontalAlignment="Left" Margin="88,243,0,0" VerticalAlignment="Top" Width="75" Click="btn_lisakorter_Click"/>
+                    <TextBox Name="txb_tubadearv" HorizontalAlignment="Left" Height="23" Margin="294,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="3"/>
+                    <TextBox Name="txb_ruutmeetrid" HorizontalAlignment="Left" Height="23" Margin="294,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="70"/>
+                    <Label Content="Vastutav isik" HorizontalAlignment="Left" Margin="198,131,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Korteri tunnus" HorizontalAlignment="Left" Margin="198,163,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Tubade arv" HorizontalAlignment="Left" Margin="204,201,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ruutmeetrid" HorizontalAlignment="Left" Margin="204,237,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Otsi">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="898*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Name="rdb_nimi" Content="Nimi" HorizontalAlignment="Left" Margin="11,39,0,0" VerticalAlignment="Top" Checked="rdb_nimi_Checked" Grid.Column="1"/>
+                    <RadioButton Name="rdb_aadress" Content="Aadress" HorizontalAlignment="Left" Margin="11,79,0,0" VerticalAlignment="Top" Checked="rdb_aadress_Checked" Grid.Column="1"/>
+                    <TextBox Name="txb_otsi" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="128,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <ListBox Name="lsb_tulemused" HorizontalAlignment="Left" Height="100" Margin="287,28,0,0" VerticalAlignment="Top" Width="492" Grid.Column="1"/>
+                    <Button Name="btn_otsi" Content="Otsi" HorizontalAlignment="Left" Margin="128,71,0,0" VerticalAlignment="Top" Width="75" Click="btn_otsi_Click" Grid.Column="1"/>
+
+
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>
